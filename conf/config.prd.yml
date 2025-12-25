@@ -1,7 +1,7 @@
 # prod
 system:
   # 系统名称
-  app-name: file-sync-backup
+  app-name: gin-mini-agent
   # 系统环境
   run-mode: prd
   # url前缀
@@ -20,7 +20,7 @@ logs:
   # 日志路径
   path: logs
   # 文件最大大小, M
-  max-size: 50
+  max-size: 100
   # 备份数
   max-backups: 100
   # 存放时间, 天

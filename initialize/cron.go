@@ -18,7 +18,7 @@ func Cron() {
 	}
 	logger := log.Default()
 	c := cron.New(cron.WithLocation(loc), cron.WithSeconds(), cron.WithLogger(cron.PrintfLogger(logger)))
-	//清理超过一周的日志表数据
+	//清理超过一周的日志文件
 	c.AddJob("0 0 1 * * *", cron.NewChain(cron.Recover(cron.PrintfLogger(logger)), cron.SkipIfStillRunning(cron.PrintfLogger(logger))).Then(&cronjob.CleanLog{}))
 	c.Start()
 	global.Log.Info("初始化Cron定时任务完成")

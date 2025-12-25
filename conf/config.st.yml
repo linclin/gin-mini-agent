@@ -1,7 +1,7 @@
 # prod
 system:
   # 系统名称
-  app-name: file-sync-backup
+  app-name: gin-mini-agent
   # 系统环境
   run-mode: st
   # url前缀
