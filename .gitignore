@@ -1,5 +1,7 @@
 .idea
 .vscode
+.codegraph
+.reasonix
 ./tmp/
 ./logs/*
 main.exe
