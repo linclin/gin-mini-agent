@@ -2,6 +2,7 @@
 .vscode
 .codegraph
 .reasonix
+docs/*
 ./tmp/
 ./logs/*
 main.exe

@@ -1,7 +1,6 @@
 package initialize
 
 import (
-	"gin-mini-agent/api"
 	"gin-mini-agent/pkg/global"
 	"gin-mini-agent/router"
 
@@ -22,15 +21,9 @@ func Routers() *gin.Engine {
 	r.Use(gin.Logger())
 	r.Use(gin.Recovery())
 
-	// 健康检查
-	r.GET("/heath_check", api.HeathCheck)
-	global.Log.Info("初始化健康检查接口完成")
-
-	// API 路由
-	apiGroup := r.Group(global.Conf.System.UrlPathPrefix)
-	v1Group := apiGroup.Group("v1")
-	router.InitFileRouter(v1Group)
-	global.Log.Info("初始化基础路由完成")
+	// 注册路由
+	router.InitRoutes(r)
+	global.Log.Info("路由初始化完成")
 
 	return r
 }
